@@ -47,9 +47,3 @@ df_new <- df %>% select(Age,SibSp, Parch)
 apply(df_new, 2, mean, na.rm = TRUE)
 
 #mean(df_new$Age, na.rm = TRUE)
-
-
-
-
-
-#
