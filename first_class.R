@@ -9,7 +9,8 @@ df %>% group_by (Pclass, Sex, Survived) %>% count() %>%
   ggplot(aes(x=Pclass, y=n, fill=Sex, mapping))+
   geom_col()+
   facet_wrap(~Survived)
-
+#-------------------------------------------------------------------------------
+#if
 df$Sex[which(is.na(df$Sex))] = 0
 
 y <- df$Sex
@@ -30,3 +31,25 @@ for (i in seq_along(x)){
     print(i * j)
   }
 }
+#-------------------------------------------------------------------------------
+
+#function in R
+sq_x <- function(x,y){
+  return (x * y)
+}
+
+sq_x(2,4)
+
+#-------------------------------------------------------------------------------
+#apply function (like map in python)
+
+df_new <- df %>% select(Age,SibSp, Parch)
+apply(df_new, 2, mean, na.rm = TRUE)
+
+#mean(df_new$Age, na.rm = TRUE)
+
+
+
+
+
+#
