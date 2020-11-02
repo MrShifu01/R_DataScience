@@ -18,5 +18,15 @@ df <- df %>% mutate(cat_sex = ifelse(y == 'male', 0, 1))
 df$Age[which(is.na(df$Age))] = 0
 x <- df$Age
 df <- df %>% mutate(cat_age = ifelse(x<10,0,ifelse(x<20,1,ifelse(x<30,2,ifelse(x>+30,3,100)))))
+#-------------------------------------------------------------------------------
 
+seq_along(df$Survived)
 
+#loops
+x <- c(1,2,3,4)
+
+for (i in seq_along(x)){
+  for(j in seq_along(x)){
+    print(i * j)
+  }
+}
